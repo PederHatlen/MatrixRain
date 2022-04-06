@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap');
+        
+@font-face {
+    font-family: 'matrix_code_nfiregular';
+    src: url('../font/matrix_code_nfi-webfont.woff2') format('woff2'),
+        url('../font/matrix_code_nfi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body{
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.info{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    font-family: Arial
+}
+.info h2{
+    padding: 0 0 5px 0;
+    margin: 0;
+}
+.property{width: auto; display: flex;}
+.var{margin-left: auto;}
+.infoname{
+    padding: 0 10px 0 0;
+    margin: 0;
+}
