@@ -21,11 +21,6 @@ function setup(){
 	c.height = window.innerHeight;
 	c.width = window.innerWidth;
 
-	// ctx.shadowOffsetX = 0;
-	// ctx.shadowOffsetY = 0;
-	// ctx.shadowBlur = 3;
-	// ctx.shadowColor = color; 
-
 	ctx.font = font_size + "px matrix_code_nfiregular";
 
 	colorAsRGB = hexToRgb(color);
@@ -69,3 +64,30 @@ function hexToRgb(hex) {
 window.onresize = setup;
 setup();
 var timer = setInterval(draw, speed)
+
+let doshadow = false;
+
+function shadow(){
+	ctx.shadowOffsetX = 0;
+	ctx.shadowOffsetY = 0;
+	ctx.shadowBlur = 3;
+
+	doshadow = !doshadow;
+	ctx.shadowColor = doshadow? color:"transparent";
+}
+
+function randomColor(){
+	return "#"+(Math.random()*0xFFFFFF<<0).toString(16);
+}
+
+window.addEventListener("keypress", e=>{
+	console.log(e.key);
+	switch (e.key){
+		case "s":
+			shadow();
+			break;
+		case " ":
+			color = randomColor();
+			break
+	}
+});
