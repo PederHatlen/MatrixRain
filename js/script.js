@@ -88,6 +88,6 @@ window.addEventListener("keypress", e=>{
 			break;
 		case " ":
 			color = randomColor();
-			break
+			break;
 	}
 });
