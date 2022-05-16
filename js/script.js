@@ -21,6 +21,10 @@ function setup(){
 	c.height = window.innerHeight;
 	c.width = window.innerWidth;
 
+	ctx.shadowOffsetX = 0;
+	ctx.shadowOffsetY = 0;
+	ctx.shadowBlur = 3;
+
 	ctx.font = font_size + "px matrix_code_nfiregular";
 
 	colorAsRGB = hexToRgb(color);
@@ -28,7 +32,6 @@ function setup(){
 	columns = c.width/font_size;
 
 	for(var i = 0; i < columns; i++){drops[i] = [Math.random()* window.innerHeight/font_size, randomCharacter()]}
-
 }
 
 //drawing the characters
@@ -68,10 +71,6 @@ var timer = setInterval(draw, speed)
 let doshadow = false;
 
 function shadow(){
-	ctx.shadowOffsetX = 0;
-	ctx.shadowOffsetY = 0;
-	ctx.shadowBlur = 3;
-
 	doshadow = !doshadow;
 	ctx.shadowColor = doshadow? color:"transparent";
 }
